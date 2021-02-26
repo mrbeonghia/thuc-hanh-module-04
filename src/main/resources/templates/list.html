@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách thành phố</title>
+</head>
+<body>
+<a th:href="@{/create}">Thêm thành phố</a>
+<table border="1px" >
+    <caption>DANH SÁCH THÀNH PHỐ</caption>
+    <tr>
+        <th>ID</th>
+        <th>Thành phố</th>
+        <th>Quốc gia</th>
+        <th></th>
+    </tr>
+    <th:block th:each="city: ${city}">
+        <tr>
+            <td th:text="${city.id}"></td>
+            <td >
+                <a th:href="@{/details/__${city.getId()}__}" ><span th:text="${city.nameCity}"></span></a>
+            </td>
+            <td th:text="${city.country.name}"></td>
+            <td>
+                <a th:href="@{/edit/__${city.getId()}__}">Edit</a>
+                | <a th:href="@{/delete/__${city.getId()}__}" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+    </th:block>
+
+</table>
+</body>
+</html>
