@@ -13,10 +13,10 @@
 <p th:text="'Diện tích:  ' + ${city.area}"></p>
 <p th:text="'Dân số: ' + ${city.population}"></p>
 <p th:text="'GDP: ' + ${city.gdp}"></p>
-<p th:text="'Giới thiệu:  '  + ${city.information}"></p>
+<p th:text="'Giới thiệu:  '  + ${city.description}"></p>
 <a href="/">Xem danh sách thành phố</a> ||
 <a th:href="@{/edit/__${city.getId()}__}">Edit</a>
-|| <a th:href="@{/delete/__${city.getId()}__}">Delete</a>
+|| <a th:href="@{/delete/__${city.getId()}__}" onclick="return confirm('Bạn có chắc muốn xoá?')">Delete</a>
 
 </body>
 </html>

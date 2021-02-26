@@ -1,15 +1,16 @@
-package com.example.demo.service;
+package com.example.demo.service.city;
 
 import com.example.demo.model.City;
-import com.example.demo.repository.CityRepository;
+import com.example.demo.repository.ICityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+
 @Service
-public class CityServiceImp implements CityService{
+public class CityServiceImp implements CityService {
     @Autowired
-    private CityRepository cityRepository;
+    private ICityRepository cityRepository;
     @Override
     public Iterable<City> findAll() {
         return cityRepository.findAll();
@@ -21,8 +22,8 @@ public class CityServiceImp implements CityService{
     }
 
     @Override
-    public void save(City city) {
-         cityRepository.save(city);
+    public City save(City city) {
+        return cityRepository.save(city);
     }
 
     @Override

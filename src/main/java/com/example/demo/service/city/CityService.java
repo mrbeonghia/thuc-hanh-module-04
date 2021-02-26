@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.city;
 
 import com.example.demo.model.City;
 
@@ -9,7 +9,7 @@ public interface CityService {
 
     Optional<City> findById(Long id);
 
-    void save(City city);
+    City save(City city);
 
     void delete(Long id);
 }

@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.country;
 
 import com.example.demo.model.Country;
 
@@ -8,5 +8,4 @@ public interface CountryService {
     Iterable<Country> findAll();
 
     Optional<Country> findById(Long id);
-
 }
