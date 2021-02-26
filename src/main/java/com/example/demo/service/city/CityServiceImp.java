@@ -1,7 +1,7 @@
 package com.example.demo.service.city;
 
 import com.example.demo.model.City;
-import com.example.demo.repository.ICityRepository;
+import com.example.demo.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +10,7 @@ import java.util.Optional;
 @Service
 public class CityServiceImp implements CityService {
     @Autowired
-    private ICityRepository cityRepository;
+    private CityRepository cityRepository;
     @Override
     public Iterable<City> findAll() {
         return cityRepository.findAll();
